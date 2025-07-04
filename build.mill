@@ -14,6 +14,7 @@ object Dependencies {
   val chisel        = mvn"org.chipsalliance::chisel:$chiselVersion"
   val chiselPlugin  = mvn"org.chipsalliance:::chisel-plugin:$chiselVersion"
 
+
   val scalaTest = mvn"org.scalatest::scalatest:3.2.19"
 }
 
