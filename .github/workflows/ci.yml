@@ -58,10 +58,11 @@ jobs:
       - name: Setup Mill
         uses: zhutmost/setup-mill@main
 
-      - name: Setup CIRCT/firtool
-        uses: zhutmost/setup-circt@main
-        with:
-          version: '1.62.1'
+      - name: Setup Coursier & Firtool
+        run: |
+          curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
+          chmod +x cs
+          ./cs launch org.chipsalliance::firtool-resolver:2.0.1 -M firtoolresolver.Main -- 1.62.1
 
       - name: Run tests
         run:
